@@ -1,0 +1,56 @@
+{
+  "schema_id": "d51f30df-8ff3-4c9f-a230-d17d4cde6b19",
+  "schema_name": "mini_test",
+  "version": "1.0",
+  "description": "",
+  "fields": [
+    {
+      "name": "manufacturer_name",
+      "type": "string",
+      "instruction": "Extract the manufacturer or brand name from the document. If not found return NC.",
+      "required": false,
+      "aliases": [
+        "manufacturer",
+        "brand",
+        "brand name"
+      ],
+      "multi_value": false,
+      "source_hint": "any",
+      "normalization": null,
+      "order": 0
+    },
+    {
+      "name": "model_number",
+      "type": "string",
+      "instruction": "Extract the exact model number explicitly written in the document. If not found return NC.",
+      "required": false,
+      "aliases": [
+        "model",
+        "model no",
+        "model number",
+        "model name"
+      ],
+      "multi_value": false,
+      "source_hint": "any",
+      "normalization": null,
+      "order": 1
+    },
+    {
+      "name": "power_supply_configuration",
+      "type": "string",
+      "instruction": "Extract power supply configuration such as volts, hertz, and phase. If not found return NC.",
+      "required": false,
+      "aliases": [
+        "power supply",
+        "electrical data",
+        "voltage",
+        "hz",
+        "phase"
+      ],
+      "multi_value": false,
+      "source_hint": "any",
+      "normalization": null,
+      "order": 2
+    }
+  ]
+}

@@ -1,0 +1,287 @@
+{
+  "schema_id": "de008450-819e-4f41-b27e-4d9d17cb6802",
+  "schema_name": "product_specification_schema",
+  "version": "1.0",
+  "description": "Schema to extract all available product models from a PDF and capture accurate model-level metadata. Missing values must be coded as NULL. Dimensional data must be separated based on source (table vs diagram).",
+  "fields": [
+    {
+      "name": "manufacturer_name",
+      "type": "string",
+      "instruction": "Extract the official manufacturer name from the document. If not available, return NULL.",
+      "required": true,
+      "aliases": [
+        "manufacturer",
+        "brand name",
+        "manufacturer name"
+      ],
+      "multi_value": false,
+      "source_hint": "text",
+      "normalization": null,
+      "order": 0
+    },
+    {
+      "name": "model_number",
+      "type": "string",
+      "instruction": "Extract all model numbers explicitly listed in the PDF. Do not infer or generate model numbers. If not available, return NULL.",
+      "required": true,
+      "aliases": [
+        "model",
+        "model no",
+        "model number",
+        "model name"
+      ],
+      "multi_value": true,
+      "source_hint": "table",
+      "normalization": null,
+      "order": 1
+    },
+    {
+      "name": "product_description",
+      "type": "string",
+      "instruction": "Extract the product description from the first page of the PDF. If not available, return NULL.",
+      "required": true,
+      "aliases": [
+        "product description",
+        "description"
+      ],
+      "multi_value": false,
+      "source_hint": "text",
+      "normalization": null,
+      "order": 2
+    },
+    {
+      "name": "product_line",
+      "type": "string",
+      "instruction": "Extract the product line or series name explicitly mentioned in the document. If not available, return NULL.",
+      "required": false,
+      "aliases": [
+        "product line",
+        "series",
+        "line"
+      ],
+      "multi_value": false,
+      "source_hint": "text",
+      "normalization": null,
+      "order": 3
+    },
+    {
+      "name": "product_literature_year",
+      "type": "number",
+      "instruction": "Extract the year of publication from the document metadata or visible document date. If not available, return NULL.",
+      "required": false,
+      "aliases": [
+        "year",
+        "publication year",
+        "literature year"
+      ],
+      "multi_value": false,
+      "source_hint": "text",
+      "normalization": null,
+      "order": 4
+    },
+    {
+      "name": "product_literature_id",
+      "type": "string",
+      "instruction": "Extract the document ID, bulletin number, or literature reference number if explicitly stated. If not available, return NULL.",
+      "required": false,
+      "aliases": [
+        "document id",
+        "bulletin number",
+        "literature id",
+        "reference number"
+      ],
+      "multi_value": false,
+      "source_hint": "text",
+      "normalization": null,
+      "order": 5
+    },
+    {
+      "name": "shipping_weight",
+      "type": "number",
+      "instruction": "Extract shipping or crated weight for the model from tables only. If not available, return NULL.",
+      "required": false,
+      "aliases": [
+        "shipping weight",
+        "crated weight"
+      ],
+      "multi_value": false,
+      "source_hint": "table",
+      "normalization": null,
+      "order": 6
+    },
+    {
+      "name": "installed_weight",
+      "type": "number",
+      "instruction": "Extract installed, operating, or net weight of the model from tables only. If not available, return NULL.",
+      "required": false,
+      "aliases": [
+        "installed weight",
+        "operating weight",
+        "net weight"
+      ],
+      "multi_value": false,
+      "source_hint": "table",
+      "normalization": null,
+      "order": 7
+    },
+    {
+      "name": "length",
+      "type": "number",
+      "instruction": "Extract overall length from product diagrams only. Do not use specification tables for this field. If not available, return NULL.",
+      "required": false,
+      "aliases": [
+        "length",
+        "overall length"
+      ],
+      "multi_value": false,
+      "source_hint": "diagram",
+      "normalization": null,
+      "order": 8
+    },
+    {
+      "name": "width",
+      "type": "number",
+      "instruction": "Extract overall width from product diagrams only. Do not use specification tables for this field. If not available, return NULL.",
+      "required": false,
+      "aliases": [
+        "width",
+        "overall width"
+      ],
+      "multi_value": false,
+      "source_hint": "diagram",
+      "normalization": null,
+      "order": 9
+    },
+    {
+      "name": "height",
+      "type": "number",
+      "instruction": "Extract overall height from product diagrams only. Do not use specification tables for this field. If not available, return NULL.",
+      "required": false,
+      "aliases": [
+        "height",
+        "overall height"
+      ],
+      "multi_value": false,
+      "source_hint": "diagram",
+      "normalization": null,
+      "order": 10
+    },
+    {
+      "name": "diameter",
+      "type": "number",
+      "instruction": "Extract diameter from product diagrams for cylindrical products only. If not available, return NULL.",
+      "required": false,
+      "aliases": [
+        "diameter",
+        "dia"
+      ],
+      "multi_value": false,
+      "source_hint": "diagram",
+      "normalization": null,
+      "order": 11
+    },
+    {
+      "name": "length_table",
+      "type": "number",
+      "instruction": "Extract length from specification tables only. Do not use diagram dimensions for this field. If not available, return NULL.",
+      "required": false,
+      "aliases": [
+        "length",
+        "table length"
+      ],
+      "multi_value": false,
+      "source_hint": "table",
+      "normalization": null,
+      "order": 12
+    },
+    {
+      "name": "width_table",
+      "type": "number",
+      "instruction": "Extract width from specification tables only. Do not use diagram dimensions for this field. If not available, return NULL.",
+      "required": false,
+      "aliases": [
+        "width",
+        "table width"
+      ],
+      "multi_value": false,
+      "source_hint": "table",
+      "normalization": null,
+      "order": 13
+    },
+    {
+      "name": "height_table",
+      "type": "number",
+      "instruction": "Extract height from specification tables only. Do not use diagram dimensions for this field. If not available, return NULL.",
+      "required": false,
+      "aliases": [
+        "height",
+        "table height"
+      ],
+      "multi_value": false,
+      "source_hint": "table",
+      "normalization": null,
+      "order": 14
+    },
+    {
+      "name": "diameter_table",
+      "type": "number",
+      "instruction": "Extract diameter from specification tables only. Do not use diagram dimensions for this field. If not available, return NULL.",
+      "required": false,
+      "aliases": [
+        "diameter",
+        "table diameter",
+        "dia"
+      ],
+      "multi_value": false,
+      "source_hint": "table",
+      "normalization": null,
+      "order": 15
+    },
+    {
+      "name": "minimum_circuit_amps_mca",
+      "type": "number",
+      "instruction": "Extract minimum circuit amps or MCA from electrical specification tables only. If not available, return NULL.",
+      "required": false,
+      "aliases": [
+        "minimum circuit amps",
+        "mca",
+        "minimum circuit amperes"
+      ],
+      "multi_value": false,
+      "source_hint": "table",
+      "normalization": null,
+      "order": 16
+    },
+    {
+      "name": "maximum_overcurrent_protection_mop",
+      "type": "number",
+      "instruction": "Extract maximum over-current protection value such as MOP or MOCP from electrical specification tables only. If not available, return NULL.",
+      "required": false,
+      "aliases": [
+        "mop",
+        "mocp",
+        "maximum overcurrent protection"
+      ],
+      "multi_value": false,
+      "source_hint": "table",
+      "normalization": null,
+      "order": 17
+    },
+    {
+      "name": "power_supply_configuration",
+      "type": "string",
+      "instruction": "Extract electrical power supply configuration such as volts, hertz, and phase from electrical specifications. If not available, return NULL.",
+      "required": false,
+      "aliases": [
+        "power supply",
+        "volts hertz phase",
+        "electrical configuration",
+        "power supply configuration"
+      ],
+      "multi_value": false,
+      "source_hint": "table",
+      "normalization": null,
+      "order": 18
+    }
+  ]
+}

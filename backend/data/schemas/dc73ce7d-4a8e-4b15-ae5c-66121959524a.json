@@ -1,0 +1,41 @@
+{
+  "schema_id": "dc73ce7d-4a8e-4b15-ae5c-66121959524a",
+  "schema_name": "landingai_test_schema",
+  "version": "1.0",
+  "description": "test extraction with landingai",
+  "fields": [
+    {
+      "name": "model_number",
+      "type": "string",
+      "instruction": "Extract the exact product model number explicitly written in the document. Do not infer. If not found return NC.",
+      "required": false,
+      "aliases": [],
+      "multi_value": false,
+      "source_hint": "any",
+      "normalization": null,
+      "order": 0
+    },
+    {
+      "name": "voltage",
+      "type": "string",
+      "instruction": "Extract electrical voltage only, such as 115V or 230V. Do not extract frequency values like 50Hz or 60Hz. If not found return SS.",
+      "required": false,
+      "aliases": [],
+      "multi_value": false,
+      "source_hint": "any",
+      "normalization": null,
+      "order": 1
+    },
+    {
+      "name": "capacity",
+      "type": "string",
+      "instruction": "Extract storage capacity only, such as liters or cubic feet. Do not extract weight or power. If not found return NA.",
+      "required": false,
+      "aliases": [],
+      "multi_value": false,
+      "source_hint": "any",
+      "normalization": null,
+      "order": 2
+    }
+  ]
+}
