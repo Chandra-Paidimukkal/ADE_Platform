@@ -1,0 +1,55 @@
+{
+  "schema_id": "fb7e05cb-79c1-4a0e-b5ea-c0bb8dda7d73",
+  "schema_name": "product_spec_schema",
+  "version": "1.0",
+  "description": "",
+  "fields": [
+    {
+      "name": "manufacturer_name",
+      "type": "string",
+      "instruction": "Extract the manufacturer or brand name from the document. If not found return NULL.",
+      "required": false,
+      "aliases": [
+        "manufacturer",
+        "brand name",
+        "manufacturer name",
+        "brand"
+      ],
+      "multi_value": false,
+      "source_hint": "any",
+      "normalization": null,
+      "order": 0
+    },
+    {
+      "name": "model_number",
+      "type": "string",
+      "instruction": "Extract the exact model number explicitly listed in the document. If not found return NULL.",
+      "required": false,
+      "aliases": [
+        "model",
+        "model no",
+        "model number",
+        "model name"
+      ],
+      "multi_value": false,
+      "source_hint": "any",
+      "normalization": null,
+      "order": 1
+    },
+    {
+      "name": "height_table",
+      "type": "number",
+      "instruction": "Extract height from specification tables only. If not found return NULL.",
+      "required": false,
+      "aliases": [
+        "height",
+        "height (in.)",
+        "overall height"
+      ],
+      "multi_value": false,
+      "source_hint": "any",
+      "normalization": null,
+      "order": 2
+    }
+  ]
+}

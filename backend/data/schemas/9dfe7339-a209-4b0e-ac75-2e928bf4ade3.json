@@ -1,0 +1,41 @@
+{
+  "schema_id": "9dfe7339-a209-4b0e-ac75-2e928bf4ade3",
+  "schema_name": "test_schema",
+  "version": "1.0",
+  "description": "test extraction",
+  "fields": [
+    {
+      "name": "model_number",
+      "type": "string",
+      "instruction": "Extract model number from the document",
+      "required": false,
+      "aliases": [],
+      "multi_value": false,
+      "source_hint": "any",
+      "normalization": null,
+      "order": 0
+    },
+    {
+      "name": "voltage",
+      "type": "string",
+      "instruction": "Extract voltage specification",
+      "required": false,
+      "aliases": [],
+      "multi_value": false,
+      "source_hint": "any",
+      "normalization": null,
+      "order": 1
+    },
+    {
+      "name": "capacity",
+      "type": "string",
+      "instruction": "Extract capacity value",
+      "required": false,
+      "aliases": [],
+      "multi_value": false,
+      "source_hint": "any",
+      "normalization": null,
+      "order": 2
+    }
+  ]
+}
