@@ -1,0 +1,48 @@
+{
+  "name": "Invoice Schema",
+  "description": "Comprehensive invoice extraction schema",
+  "schema_definition": {
+    "vendorInfo": {
+      "companyName": "string",
+      "address": "string",
+      "phone": "string",
+      "email": "string",
+      "taxId": "string"
+    },
+    "invoiceInfo": {
+      "invoiceNumber": "string",
+      "invoiceDate": "date",
+      "dueDate": "date",
+      "poNumber": "string",
+      "currency": "string"
+    },
+    "billingInfo": {
+      "billedTo": "string",
+      "billingAddress": "string",
+      "contactPerson": "string"
+    },
+    "lineItems": [
+      {
+        "description": "string",
+        "quantity": "number",
+        "unitPrice": "number",
+        "discount": "number",
+        "total": "number"
+      }
+    ],
+    "totals": {
+      "subtotal": "number",
+      "discountAmount": "number",
+      "taxAmount": "number",
+      "shippingCost": "number",
+      "totalAmount": "number"
+    },
+    "paymentInfo": {
+      "paymentTerms": "string",
+      "bankName": "string",
+      "accountNumber": "string",
+      "routingNumber": "string",
+      "notes": "string"
+    }
+  }
+}

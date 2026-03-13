@@ -1,0 +1,12 @@
+{
+    "fields": [
+        "model",
+        "voltage",
+        "amperage",
+        "capacity",
+        "height",
+        "width",
+        "depth",
+        "weight"
+    ]
+}
